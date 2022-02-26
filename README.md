@@ -1,0 +1,1 @@
+Running experiments across columns. Each column will be represented at different data types and with different manipulation (e.g. offset, bit encoding, size, order, frequency, etc.)  
