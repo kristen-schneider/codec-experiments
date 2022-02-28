@@ -22,7 +22,12 @@ def int_blocks(column_file, block_size):
     single_block = []
     for row in f:
         if i < block_size:
-            single_block.append(int(row))
+            try:
+                single_block.append(int(row))
+            except ValueError:
+                if row == 'X': single_block.apppend(23)
+                if row == 'Y': single_block.append(24)
+                else: print(row)
             i += 1
         elif i == block_size:
             all_blocks.append(single_block)
