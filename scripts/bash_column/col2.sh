@@ -1,8 +1,9 @@
 #!/bin/sh
 
-data_file="../data/col2.tsv"
-col="COL2"
 block_size=$1
+data_dir=$2
+data_file=$data_dir"col2.tsv"
+col="COL2"
 
 # COL2
 echo "BZ2 for $col"
