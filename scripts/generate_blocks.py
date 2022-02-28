@@ -27,11 +27,10 @@ def int_blocks(column_file, block_size):
                 single_block.append(int(ROW))
             except ValueError:
                 if ROW == 'X':
-                    print('here')
                     single_block.append(23)
-                if ROW == 'Y': single_block.append(24)
+                elif ROW == 'Y': single_block.append(24)
                 else:
-                    print('not good', row)
+                    print(row)
             i += 1
         elif i == block_size:
             all_blocks.append(single_block)
