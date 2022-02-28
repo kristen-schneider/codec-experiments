@@ -20,3 +20,6 @@ echo "ZLIB for $col"
 python main.py $data_file $block_size 1 zlib
 python main.py $data_file $block_size 2 zlib
 python main.py $data_file $block_size 3 zlib
+
+echo "PYFAST for $col"
+python main.py $data_file $block_size 1 pyfast
