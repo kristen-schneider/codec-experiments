@@ -29,8 +29,9 @@ def int_blocks(column_file, block_size):
                 if ROW == 'X':
                     single_block.append(23)
                 elif ROW == 'Y': single_block.append(24)
-                # else:
-                #     print(row)
+                elif ROW == 'NA': single_block.append(-1)
+                elif ROW == 'true': single_block.append(1)
+                elif ROW == 'false': single_block.append(0)
             i += 1
         elif i == block_size:
             all_blocks.append(single_block)
@@ -50,8 +51,15 @@ def float_blocks(column_file, block_size):
     f = open(column_file, 'r')
     single_block = []
     for row in f:
+        ROW = row.strip()
         if i < block_size:
-            single_block.append(float(row.strip()))
+            try: single_block.append(float(ROW))
+            except ValueError:
+                if ROW == 'X': single_block.append(23.)
+                elif ROW == 'Y': single_block.append(24.)
+                elif ROW == 'NA': single_block.append(-10.)
+                elif ROW == 'true': single_block.append(1.)
+                elif ROW == 'false': single_block.append(0.)
             i += 1
         elif i == block_size:
             all_blocks.append(single_block)

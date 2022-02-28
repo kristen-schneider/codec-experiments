@@ -1,3 +1,5 @@
+import struct
+
 def serialize_list(in_list, compression_data_type):
     s_bitstring = b''
     s_value = None
@@ -6,7 +8,7 @@ def serialize_list(in_list, compression_data_type):
     if compression_data_type == 1:
         s_value = serialize_int_data(in_list)
     elif compression_data_type == 2: 
-        s_value = serialize_float_data(in_list, compression_data_type)
+        s_value = serialize_float_data(in_list)
     elif compression_data_type == 3 or compression_data_type == 4:
         s_value = serialize_string_data(in_list)
     else: print('cannot detect data_type')
@@ -36,7 +38,11 @@ def serialize_int_data(in_list):
 
 
 def serialize_float_data(in_list):
-    return in_list
+    s_floats = b''
+    for i in in_list:
+        s_value = bytearray(struct.pack("f", i))
+        s_floats += s_value
+    return s_floats
 
 
 def serialize_string_data(in_list):
@@ -47,5 +53,5 @@ def serialize_string_data(in_list):
             if len(s_value) > 1:
                 s_value = b'\0'+s_value+b'\0'
         except TypeError: return -1
-        s_strings+=s_value
+        s_strings += s_value
     return s_strings

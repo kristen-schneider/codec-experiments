@@ -1,7 +1,6 @@
 #!/bin/sh
 
 #data_dir="/home/krsc0813/projects/gwas-compress/gwas_files/columns/col1.tsv"
-data_dir="../../data/"
 bash_dir="./bash_column/"
 block_size=3
 
