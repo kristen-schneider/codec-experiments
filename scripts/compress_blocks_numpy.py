@@ -1,5 +1,5 @@
-import serialize_data
-import compress
+import numpy as np
+import compress_serialized
 
 def compress_blocks(blocks, data_type, codec):
     serialized_block = b''
@@ -10,8 +10,7 @@ def compress_blocks(blocks, data_type, codec):
     for block_i in range(len(blocks)):
         # current column info
         curr_block = blocks[block_i]
-        curr_block_bitstring = serialize_data.serialize_list(curr_block, data_type)
-        curr_compressed_block = compress.compress_bitstring(curr_block_bitstring, codec)
+        curr_compressed_block = compress_serialized.compress_bitstring(curr_block, codec, data_type)
         block_bitstring += curr_compressed_block
 
     return block_bitstring
