@@ -1,9 +1,8 @@
 #!/bin/sh
 
-#data_file='/home/krsc0813/projects/gwas-compress/gwas_files/columns/'
-data_file='../data/test.tsv'
+data_file='/home/krsc0813/projects/gwas-compress/gwas_files/columns/col1.tsv'
+#data_file='../data/test.tsv'
 block_size=10000
-codec='gzip'
 
 echo "Running program..."
 echo "BZ2"
