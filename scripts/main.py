@@ -13,6 +13,7 @@ def main():
     if data_type == 1:
         print("Integers...")
         blocks = integers.make_blocks(data_file)
+        for b in blocks: print(b)
     elif data_type == 2:
         blocks = floats.make_blocks(data_file)
     elif data_type == 3:
