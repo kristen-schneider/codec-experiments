@@ -18,3 +18,14 @@ python main.py $data_file $block_size 3 gzip s
 echo "ZLIB for $col"
 python main.py $data_file $block_size 2 zlib s
 python main.py $data_file $block_size 3 zlib s
+
+echo "FPZIP for $col"
+python main.py $data_file $block_size 2 fpzip n
+
+echo "ZFPY for $col"
+#python main.py $data_file $block_size 1 zfpy n
+python main.py $data_file $block_size 2 zfpy n
+
+echo "PYZFP for $col"
+#python main.py $data_file $block_size 1 pyzfp n
+python main.py $data_file $block_size 2 pyzfp n
