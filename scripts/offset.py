@@ -1,5 +1,5 @@
 def int_blocks(column_file, block_size):
-    print("OFFSET")
+    print("\tOFFSET")
 
     all_blocks = []
     i = 0
@@ -35,6 +35,7 @@ def int_blocks(column_file, block_size):
     return all_blocks
 
 def float_blocks(column_file, block_size):
+    print("\tOFFSET")
     all_blocks = []
     i = 0
 
