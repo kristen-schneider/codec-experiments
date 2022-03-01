@@ -1,7 +1,7 @@
 #!/bin/sh
 
-data_dir="/home/krsc0813/projects/gwas-compress/gwas_files/columns/"
-#data_dir="../data/"
+#data_dir="/home/krsc0813/projects/gwas-compress/gwas_files/columns/"
+data_dir="../data/"
 bash_dir="./bash_column/"
 block_size=10000
 
