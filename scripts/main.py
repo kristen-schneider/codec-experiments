@@ -9,7 +9,7 @@ data_type = int(sys.argv[3])
 codec = sys.argv[4]
 N_S = sys.argv[5]
 
-offset=False
+offset = True
 
 def main():
     if N_S == 's':
