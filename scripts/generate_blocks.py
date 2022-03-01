@@ -5,7 +5,7 @@ def make_blocks(column_file, data_type, block_size, offset_bool):
         if data_type == 1:
             all_blocks = offset.int_blocks(column_file, block_size)
         elif data_type == 2:
-            all_blocks = float_blocks(column_file, block_size)
+            all_blocks = offset.float_blocks(column_file, block_size)
     else:
         if data_type == 1:
             all_blocks = int_blocks(column_file, block_size)
