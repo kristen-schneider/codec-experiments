@@ -22,4 +22,4 @@ python main.py $data_file $block_size 2 zlib s
 python main.py $data_file $block_size 3 zlib s
 
 echo "PYFAST for $col"
-python main.py $data_file $block_size 1 pyfast n
+python main.py $data_file $block_size 1 fastpfor128 n

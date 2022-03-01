@@ -6,7 +6,7 @@ import sys
 import numpy as np
 
 
-def compress_numpy(current_block, codec, data_type):
+def compress_numpy_array(current_block, codec, data_type):
     """
     compress a serialized bitstring using specified compression method
 

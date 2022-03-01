@@ -10,7 +10,7 @@ def compress_blocks(blocks, data_type, codec):
     for block_i in range(len(blocks)):
         # current column info
         curr_block = blocks[block_i]
-        curr_compressed_block = compress_numpy.compress_bitstring(curr_block, codec, data_type)
+        curr_compressed_block = compress_numpy.compress_numpy_array(curr_block, codec, data_type)
         block_bitstring += curr_compressed_block
 
     return block_bitstring
