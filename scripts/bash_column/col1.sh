@@ -8,6 +8,7 @@ col="COL1"
 # COL1
 echo "BZ2 for $col"
 python main.py $data_file $block_size 1 bz2 s
+python main.py $data_file $block_size 1 bz2 s o
 python main.py $data_file $block_size 2 bz2 s
 python main.py $data_file $block_size 3 bz2 s
 
