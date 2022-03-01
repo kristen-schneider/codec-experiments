@@ -38,11 +38,11 @@ col,codec,data_type,size
 2o,zlib,2,70755181
 2,zlib,3,86414571
 2,fastpfor128,1,95517977
-2o,fastpfor128,1,
+2o,fastpfor128,1,69323681
 2,fpzip,2,21519559
-2o,fpzip,2,
+2o,fpzip,2,48848188
 2,zfpy,2,72123537
-2o,zfpy,2,
+2o,zfpy,2,67621609
 2,pyzfp,2,87105633
 2o,pyzfp,2,
 3,bz2,3,10916961
