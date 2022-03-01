@@ -8,7 +8,10 @@ block_size = int(sys.argv[2])
 data_type = int(sys.argv[3])
 codec = sys.argv[4]
 N_S = sys.argv[5]
-flag = sys.argv[6]
+try:
+    flag = sys.argv[6]
+except IndexError:
+    flag = ''
 
 
 def main():
