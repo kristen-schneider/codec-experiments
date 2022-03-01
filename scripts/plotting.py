@@ -6,31 +6,47 @@ import numpy as np
 import sys
 
 io_file = sys.argv[1]
-col_num = 1
+col_num1 = '1'
+col_num2 = '1o'
 
 def main():
-    col_data = group_by_column(col_num)
-    plot_by_column(col_data, col_num)
+    col_data1 = group_by_column(col_num1)
+    col_data2 = group_by_column(col_num2)
+    plot_by_column(col_data1, col_data2, col_num1)
 
-def plot_by_column(col_data, col_num):
+def plot_by_column(col_data1, col_data2, col_num):
     plt.figure(figsize=(20,10))
     color_dict = {'bz2':'red','gzip':'gold', 'zlib':'forestgreen',
               'fastpfor128':'dodgerblue', 'fpzip':'hotpink',
               'zfpy':'black','pyzfp':'saddlebrown'}
-    codecs = [d[0] for d in col_data]
-    data_types = [d[1] for d in col_data]
-    noise = 0.1 * np.random.randn(len(data_types))
 
-    sizes = [d[2] for d in col_data]
-    colors = [color_dict[c] for c in codecs]
+    # NO FLAGS
+    codecs1 = [d[0] for d in col_data1]
+    data_types1 = [d[1] for d in col_data1]
+    noise1 = 0.1 * np.random.randn(len(data_types1))
 
-    plt.scatter(data_types+noise, sizes, c=colors, alpha=0.8, linewidths=20)
+    sizes1 = [d[2] for d in col_data1]
+    colors1 = [color_dict[c] for c in codecs1]
+
+    # FLAGS
+    codecs2 = [d[0] for d in col_data2]
+    data_types2 = [d[1] for d in col_data2]
+    noise2 = 0.1 * np.random.randn(len(data_types2))
+
+    sizes2 = [d[2] for d in col_data2]
+    colors2 = [color_dict[c] for c in codecs2]
+
+
+
+    plt.scatter(data_types1+noise1, sizes1, c=colors1, alpha=0.8, s=500)
+    plt.scatter(data_types2+noise2, sizes2, c=colors2, alpha=0.8, s=500, marker='X')
+
     plt.title("COLUMN: " + str(col_num) + " (chromosomes)", fontsize=40)
     plt.xlabel("Data Type", fontsize=20)
     plt.xticks(np.array([1,2,3]), ['integer','float','string'], fontsize=20)
     plt.xlim([0.5, 3.5])
     plt.ylabel("Compressed Size (bytes)", fontsize=20)
-    plt.ylim([100000, 200000])
+    plt.ylim([0, 1400000])
     plt.yticks(fontsize=20)
 
     # Legend
@@ -53,16 +69,6 @@ def plot_by_column(col_data, col_num):
 
 
 
-    # codec_dict = dict.fromkeys(codecs)
-    # for d in col_data:
-    #     codec = d[0]
-    #     data_type = d[1]
-    #     size = d[2]
-    #     try: codec_dict[codec].append([data_type,size])
-
-
-
-
 def group_by_column(col_num):
     col_data = []
     f = open(io_file, 'r')
@@ -72,7 +78,7 @@ def group_by_column(col_num):
         else:
             curr_exp = []
             A = line.strip().split(',')
-            col = int(A[0])
+            col = A[0]
             codec = A[1]
             data_type = int(A[2])
             try:
