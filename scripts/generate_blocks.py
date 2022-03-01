@@ -1,7 +1,7 @@
 import offset
 
-def make_blocks(column_file, data_type, block_size, offset):
-    if offset == True:
+def make_blocks(column_file, data_type, block_size, offset_bool):
+    if offset_bool == True:
         if data_type == 1:
             all_blocks = offset.int_blocks(column_file, block_size)
         elif data_type == 2:
