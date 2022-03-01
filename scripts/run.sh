@@ -6,7 +6,7 @@ bash_dir="./bash_column/"
 block_size=10000
 
 echo "Running experiments..."
-bash $bash_dir"col5.sh" $block_size $data_dir
+bash $bash_dir"col6.sh" $block_size $data_dir
 #for col_bash in `ls $bash_dir`
 #do
 #  echo $col_bash
