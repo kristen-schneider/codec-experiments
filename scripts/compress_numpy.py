@@ -25,7 +25,7 @@ def compress_numpy_array(current_block, codec, data_type):
 
     # FPZIP
     elif codec == 'fpzip':
-        compressed_bitstring = fpzip_compress(current_block, 0)
+        compressed_bitstring = fpzip_compress(current_block)
 
     # ZFPY
     elif codec == 'zfpy':
@@ -89,7 +89,7 @@ def zfpy_compress(current_block, data_type):
     """
     # converts all data to floats (can take in integers, but will convert).
     if data_type == 1:
-        numpy_array = np.array(current_block, dtype=np.uint32, order='C')
+        numpy_array = np.array(current_block, dtype=np.uintc, order='C')
     elif data_type == 2:
         numpy_array = np.array(current_block, dtype=np.float32, order='C')
 

@@ -27,10 +27,10 @@ python main.py $data_file $block_size 1 fastpfor128 n
 echo "FPZIP for $col"
 python main.py $data_file $block_size 2 fpzip n
 
-#echo "ZFPY for $col"
+echo "ZFPY for $col"
 #python main.py $data_file $block_size 1 zfpy n
-#python main.py $data_file $block_size 2 zfpy n
-#
-#echo "PYZFP for $col"
+python main.py $data_file $block_size 2 zfpy n
+
+echo "PYZFP for $col"
 #python main.py $data_file $block_size 1 pyzfp n
-#python main.py $data_file $block_size 2 pyzfp n
+python main.py $data_file $block_size 2 pyzfp n
