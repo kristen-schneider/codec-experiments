@@ -1,4 +1,6 @@
 def int_blocks(column_file, block_size):
+    print("OFFSET")
+
     all_blocks = []
     i = 0
 
