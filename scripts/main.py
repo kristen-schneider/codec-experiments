@@ -8,24 +8,24 @@ block_size = int(sys.argv[2])
 data_type = int(sys.argv[3])
 codec = sys.argv[4]
 N_S = sys.argv[5]
+flag = sys.argv[6]
 
-offset = True
 
 def main():
     if N_S == 's':
         if data_type == 1:
             print("\tIntegers...")
-            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, offset)
+            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, flag)
             compressed_block = compress_blocks_serialized.compress_blocks(blocks, data_type, codec)
             print("\t", sys.getsizeof(compressed_block))
         elif data_type == 2:
             print("\tFloats...")
-            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, offset)
+            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, flag)
             compressed_block = compress_blocks_serialized.compress_blocks(blocks, data_type, codec)
             print("\t", sys.getsizeof(compressed_block))
         elif data_type == 3:
             print("\tStrings...")
-            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, offset)
+            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, flag)
             compressed_block = compress_blocks_serialized.compress_blocks(blocks, data_type, codec)
             print("\t", sys.getsizeof(compressed_block))
         else:
@@ -34,12 +34,12 @@ def main():
     elif N_S == 'n':
         if data_type == 1:
             print("\tIntegers...")
-            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, offset)
+            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, flag)
             compressed_block = compress_blocks_numpy.compress_blocks(blocks, data_type, codec)
             print("\t", sys.getsizeof(compressed_block))
         elif data_type == 2:
             print("\tFloats...")
-            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, offset)
+            blocks = generate_blocks.make_blocks(data_file, data_type, block_size, flag)
             compressed_block = compress_blocks_numpy.compress_blocks(blocks, data_type, codec)
             print("\t", sys.getsizeof(compressed_block))
 

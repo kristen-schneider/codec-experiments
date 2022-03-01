@@ -1,11 +1,15 @@
 import offset
+import bit_encoding
 
-def make_blocks(column_file, data_type, block_size, offset_bool):
-    if offset_bool == True:
+def make_blocks(column_file, data_type, block_size, flag):
+    if flag == 'o':
         if data_type == 1:
             all_blocks = offset.int_blocks(column_file, block_size)
         elif data_type == 2:
             all_blocks = offset.float_blocks(column_file, block_size)
+    elif flag == 'b':
+        if data_type == 1:
+            all_blocks = bit_encoding.int_blocks(column_file, block_size)
     else:
         if data_type == 1:
             all_blocks = int_blocks(column_file, block_size)
