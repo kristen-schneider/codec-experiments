@@ -7,9 +7,9 @@ col="COL7"
 
 # COL7
 echo "BZ2 for $col"
-python main.py $data_file $block_size 2 bz2 s
+#python main.py $data_file $block_size 2 bz2 s
 python main.py $data_file $block_size 2 bz2 s o
-python main.py $data_file $block_size 3 bz2 s
+#python main.py $data_file $block_size 3 bz2 s
 
 echo "GZIP for $col"
 #python main.py $data_file $block_size 2 gzip s
