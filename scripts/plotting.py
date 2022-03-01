@@ -6,8 +6,8 @@ import numpy as np
 import sys
 
 io_file = sys.argv[1]
-col_num1 = '1'
-col_num2 = '1o'
+col_num1 = '2'
+col_num2 = '2o'
 
 def main():
     col_data1 = group_by_column(col_num1)
@@ -41,12 +41,12 @@ def plot_by_column(col_data1, col_data2, col_num):
     plt.scatter(data_types1+noise1, sizes1, c=colors1, alpha=0.8, s=500)
     plt.scatter(data_types2+noise2, sizes2, c=colors2, alpha=0.8, s=500, marker='X')
 
-    plt.title("COLUMN: " + str(col_num) + " (chromosomes)", fontsize=40)
+    plt.title("COLUMN: " + str(col_num) + " (positions)\nwith offset", fontsize=40)
     plt.xlabel("Data Type", fontsize=20)
     plt.xticks(np.array([1,2,3]), ['integer','float','string'], fontsize=20)
     plt.xlim([0.5, 3.5])
     plt.ylabel("Compressed Size (bytes)", fontsize=20)
-    plt.ylim([0, 1400000])
+    plt.ylim([0, 120000000])
     plt.yticks(fontsize=20)
 
     # Legend
